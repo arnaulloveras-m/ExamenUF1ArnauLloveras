@@ -28,4 +28,9 @@ class GroupViewModel : ViewModel(){
         alumns = Repositori.getAlumnByName(context, nombre)
         return alumns
     }
+
+    fun getAllAlumns(context: Context) : LiveData<List<Alumns>>? {
+        alumns = Repositori.getAllAlumns(context)
+        return alumns
+    }
 }

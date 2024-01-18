@@ -46,6 +46,11 @@ class GroupFragment : Fragment() {
 
         val switch = binding.switchCompat
 
+        alumnsViewModel.getAllAlumns(requireContext())
+        alumnsViewModel.alumns?.observe(viewLifecycleOwner) { llistaAlumns ->
+            binding.recyclerView.adapter = AlumnsAdapter(llistaAlumns)
+        }
+
         switch.setOnClickListener {
             if (switch.isChecked) {
                 alumnsViewModel.getAlumnsByGradeApproved(requireContext())

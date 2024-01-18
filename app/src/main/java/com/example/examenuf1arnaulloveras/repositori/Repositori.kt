@@ -60,5 +60,14 @@ class Repositori {
 
             return alumns
         }
+
+        //All Alumns
+        fun getAllAlumns(context: Context): LiveData<List<Alumns>>?  {
+            alumnsDatabase = initializeDB(context)
+
+            alumns = alumnsDatabase!!.alumnsDao().getAllAlumns()
+
+            return alumns
+        }
     }
 }

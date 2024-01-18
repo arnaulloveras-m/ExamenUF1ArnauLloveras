@@ -21,4 +21,7 @@ interface AlumnsDao {
 
     @Query("SELECT * FROM Alumns WHERE name =:nombre")
     fun getAlumnByName(nombre:String): LiveData<List<Alumns>>
+
+    @Query("SELECT * FROM Alumns ORDER BY grade")
+    fun getAllAlumns(): LiveData<List<Alumns>>
 }
